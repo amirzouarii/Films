@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Card } from 'react-bootstrap'
 import './CardFilm.css'
 import FilterRate from '../filterRate/FilterRate'
+import { Link } from 'react-router-dom'
 
 const CardFilm = ({films}) => {
   return (
@@ -14,12 +15,15 @@ const CardFilm = ({films}) => {
           {films.description}
         </Card.Text>
         <FilterRate rate={films.rate} isRating={false} />
+        <Link to={`/description/${films.id}`}>
+  <Button variant="primary">Description</Button>
+</Link>
 
-        <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
     </div>
   )
 }
+
 
 export default CardFilm
